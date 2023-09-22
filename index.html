@@ -4,11 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server en python</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    Saludo: <input type="text" 
-        name="txtNombre" id="txtNombre">
-    <div id="dvSaludo"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="card text-bg-dark mb-3">
+                    <div class="card-header">Registro de Alumnos</div>
+                    <div class="card-body">
+                        <form method="post" id="frmAlumnos">
+                            <div class="row p-1">
+                                <div class="col-3">CODIGO: </div>
+                                <div class="col-3">
+                                    <input type="text" name="txtCodigoNombre" id="txtCodigoNombre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row p-1">
+                                <div class="col-3">NOMBRE: </div>
+                                <div class="col-6">
+                                    <input type="text" name="txtNombreAlumnos" id="txtNombreAlumnos" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row p-1">
+                                <div class="col-3">DIRECCION: </div>
+                                <div class="col-9">
+                                    <input type="text" name="txtDireccionAlumnos" id="txtDireccionAlumnos" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row p-1">
+                                <div class="col-3">TELEFONO: </div>
+                                <div class="col-3">
+                                    <input type="text" name="txtTelefonoAlumno" id="txtTelefonoAlumno" class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">
+                        
+                    </div>
+                  </div>
+            </div>
+            <div class="col-6">Consulta Alumnos</div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", e=>{
