@@ -17,23 +17,40 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mimenu" id="mdxMenu">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Alumnos</a>
+                        <a class="nav-link" data-form="alumnos" href="#">Alumnos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Materias</a>
+                        <a class="nav-link" data-form="materias" href="#">Materias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Docentes</a>
+                        <a class="nav-link" data-form="docentes" href="#">Docentes</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container-fluid">
+        <div class="absolute" id="alumnos"></div>
+        <div class="absolute" id="materias"></div>
+        <div class="absolute" id="docentes"></div>
 
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", e=>{
+            mnxMenu.addEventListener("click", event=>{
+                event.preventDefault();
+                
+                let form = event.target.dataset.form;
+                    $element = document.querySelector(`#${form}`)
+                if ( $element.lenght()<=0 ) {
+                    fetch('/alumnos.html').then(resp=>resp.text()).then(resp=>{
+                        $element.innerHTML = resp;
+                    });
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
