@@ -36,19 +36,20 @@
         <div class="absolute" id="materias"></div>
         <div class="absolute" id="docentes"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script>
         document.addEventListener("DOMContentLoaded", e => {
             mnxMenu.addEventListener("click", event => {
                 event.preventDefault();
 
                 let form = event.target.dataset.form;
-                    $element = document.querySelector(`#${form}`)
-                    console.log( $element );
-                //if ($element.lenght() <= 0) {
+                    $element = $(`#${form}`)
+                console.log($element.find("form").lenght, $element);
+                if ($element.find(form).lenght <= 0) {
                     fetch('/frmalumnos').then(resp => resp.text()).then(resp => {
-                        $element.innerHTML = resp;
+                        $($element).html(resp);
                     });
-                //}
+                }
             });
         });
     </script>
