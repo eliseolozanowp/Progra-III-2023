@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">::. Sistema Academico .::</a>
+            <a class="navbar-brand" href="#">::. Sistema Academico.::</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,15 +38,14 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", e => {
-            mnxMenu.addEventListener("click", event => {
+        document.addEventListener("DOMContentLoaded", e=>{
+            mnxMenu.addEventListener("click", event=>{
                 event.preventDefault();
 
-                let form = event.target.dataset.form;
-                    $element = $(`#${form}`)
-                console.log($element.find("form").lenght, $element);
-                if ($element.find(form).lenght <= 0) {
-                    fetch('/frmalumnos').then(resp => resp.text()).then(resp => {
+                let form = event.target.dataset.form,
+                    $element = $(`#${form}`);
+                if( $element.find("form").length<=0 ){
+                    fetch('/frmalumnos').then(resp=>resp.text()).then(resp=>{
                         $($element).html(resp);
                     });
                 }
@@ -54,5 +53,4 @@
         });
     </script>
 </body>
-
 </html>
