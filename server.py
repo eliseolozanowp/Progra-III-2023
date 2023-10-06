@@ -33,6 +33,8 @@ class miServer(SimpleHTTPRequestHandler):
         datos = json.loads(datos)
         if self.path=="/alumnos":
             resp = {"msg": crud_alumnos.administrar(datos)}
+        if self.path=="/buscar_alumnos":
+            resp = crud_alumnos.consultar_alumnos(datos)
         
         self.send_response(200)
         self.end_headers()
