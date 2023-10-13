@@ -5,5 +5,8 @@ from django.http import HttpResponse
 def saludo(request):
     return HttpResponse("Hola desde django")
 
-def miEdad(reques, edad):
+def miEdad(request, edad):
     return HttpResponse("Hola tu edad es: %s" %edad)
+
+def index(request):
+    return render(request, 'index.html')

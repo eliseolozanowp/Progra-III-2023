@@ -54,7 +54,7 @@ ROOT_URLCONF = "appacademica.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['/workspaces/Progra-III-2023/appacademica/appalumos/plantillas'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

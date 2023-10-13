@@ -5,5 +5,6 @@ from appalumnos.views import saludo, miEdad
 urlpatterns = [
     path('admin', admin.site.urls),
     path('saludo/', saludo),
-    path('edad/<int:edad>', miEdad)
+    path('edad/<int:edad>', miEdad),
+    path('', index),
 ]
