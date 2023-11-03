@@ -10,3 +10,6 @@ def miEdad(request, edad):
 
 def index(request):
     return render(request, 'index.html')
+
+def alumnos(request):
+    return render(request, 'alumnos.html')
