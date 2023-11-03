@@ -13,3 +13,6 @@ def index(request):
 
 def alumnos(request):
     return render(request, 'alumnos.html')
+
+def busqueda_alumnos(request):
+    return render(request, 'busqueda_alumnos.html')
